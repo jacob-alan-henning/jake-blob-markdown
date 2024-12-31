@@ -9,7 +9,7 @@ First step was to investigate how different people build/host personal websites.
  * blogs where everything is taken care of for you 
  * blogs where everything is bespoke
  
- Using wordpress or medium is the way to go if you are interested in things like ease of use, maintainability, and discoverability. Obviously everything in my blog should be pretty much hand rolled. 
+ Using wordpress or medium is the way to go if you are interested in things like ease of use, maintainability, and discoverability. My blog will lean much more heavily on the bespoke side of the spectrum
 
 There are some real advantages to building a unicorn blog 
 
