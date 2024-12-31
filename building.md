@@ -67,6 +67,7 @@ After some research I wrote this high level set of requirements. Here's what I c
 The observability section stands out now - I actually went down this rabbit hole, spinning up a Jaeger server, Prometheus, and Grafana stack before reality (and my wallet) kicked in. Turns out, maintaining an observability platform for a personal blog is expensive, hard, insecure, and of questionable value. If you are ever tasked with observability at your job; just pay for datadog. My original intent with these requirements was to show ability to maintain a software system; I may end up implementing most of this but I need to ship something out the door first.
 
 Stripping away all the enterprise architecture fever dreams, I realized I really just had a few core requirements:
+
 * I need to be able to blog without a ton of friction
 * I don't want it to fall over
 * I want it to be a little unique
@@ -100,6 +101,7 @@ When the BlogServer starts, it:
 5. Manages graceful shutdown when signaled
 
 These were the big design decisions that I ended up making
+
 * use environment variables for all configuration
 * store content in git rather than a database
 * pre-render html
@@ -130,8 +132,9 @@ I just completly skipped doing this properly with cicd and automating in any sor
 ## Retro
 
 Some decisions that did work well was
+
 * git is a good cms
-* hard to go wrong with go and htmx
+* not persisting state simplified development immensely
 
 The big lesson I had to relearn throughout this whole project was stop trying to find perfection and get the mininmium done. Have something to show and iterate on; is always more important than getting it all done perfectly in one big push.
 
