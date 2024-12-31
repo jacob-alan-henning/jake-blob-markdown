@@ -125,7 +125,7 @@ I think it looks quite sharp, runs reasonably quick, and is simple enough a fron
 
 ## Deploying
 
-I just completly skipped doing this properly with cicd and automating in any sort of fashion. I just copied the binary to an aws lightsail instance and called it a day. I will come back again but at this point I just want to see something on the public internet. I've procastinated way too much already
+I just completly skipped doing this properly with cicd and automating in any sort of fashion. I just copied the binary to an aws lightsail instance and called it a day. I will come back again but at this point I just want to see something on the public internet. I've procastinated way too much already - leaving it running in a tmux pane is a good enough for day 0.
 
 ## Retro
 
