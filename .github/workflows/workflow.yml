@@ -1,0 +1,18 @@
+name: jake-blog-content-push
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  push-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch update
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT }}
+          repository: jacob-alan-henning/jake-blog
+          event-type: blog-update
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+
