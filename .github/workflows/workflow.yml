@@ -26,14 +26,9 @@ jobs:
 
       - name: optimize image 
         run: |
-          find images/ \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" \) \
-            -exec convert {} -resize 1920x1080 -strip {} \;
-          
-          find images/ \( -name "*.jpg" -o -name "*.jpeg" \) \
-            -exec convert {} -quality 85 {} \;
-          
-          find images/ -name "*.png" \
-            -exec convert {} -quality 95 {} \;
+          find images/ -name "*.jpg" -exec convert {} -auto-orient -resize 1920x1080 -quality 85 -strip {} \;
+          find images/ -name "*.jpeg" -exec convert {} -auto-orient -resize 1920x1080 -quality 85 -strip {} \;
+          find images/ -name "*.png" -exec convert {} -resize 1920x1080 -quality 95 -strip {} \;
 
       - name: sync images to S3
         run: |
