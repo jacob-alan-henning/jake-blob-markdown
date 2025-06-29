@@ -21,7 +21,21 @@ jobs:
           role-to-assume: ${{ secrets.AWS_IDP_ARN }}
           aws-region: us-east-1
 
-      - name: Sync images to S3
+      - name: install imagemagick 
+        run: sudo apt-get update -y && sudo apt-get install -y imagemagick 
+
+      - name: optimize image 
+        run: |
+          find images/ \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" \) \
+            -exec convert {} -resize 1920x1080 -strip {} \;
+          
+          find images/ \( -name "*.jpg" -o -name "*.jpeg" \) \
+            -exec convert {} -quality 85 {} \;
+          
+          find images/ -name "*.png" \
+            -exec convert {} -quality 95 {} \;
+
+      - name: sync images to S3
         run: |
           aws s3 sync images/ s3://jakeblog-blog-image-cache/ --delete
 
