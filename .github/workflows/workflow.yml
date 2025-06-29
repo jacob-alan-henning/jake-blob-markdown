@@ -7,7 +7,24 @@ on:
 jobs:
   push-update:
     runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write 
+      contents: read 
+
     steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_IDP_ARN }}
+          aws-region: us-east-1
+
+      - name: Sync images to S3
+        run: |
+          aws s3 sync images/ s3://jakeblog-blog-image-cache/ --delete
+
       - name: Dispatch update
         uses: peter-evans/repository-dispatch@v3
         with:
