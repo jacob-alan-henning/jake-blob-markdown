@@ -7,6 +7,7 @@ You're copying creds into GitHub secrets, aren't you Morgan?
 Its easier than you think; despite the best efforts of your cloud providers documentation. 
 
 two steps
+
 * create an identity in your cloud provider
 * create a trust relationship with that identity and the repo 
 
