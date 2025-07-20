@@ -7,8 +7,8 @@ You're copying creds into GitHub secrets, aren't you Morgan?
 Its easier than you think; despite the best efforts of your cloud providers documentation. 
 
 two steps
-1. create an identity in your cloud provider
-2. create a trust relationship with that identity and the repo 
+* create an identity in your cloud provider
+* create a trust relationship with that identity and the repo 
 
 OIDC can be complicated but with a trusted provider where you don't have to think about PKI its brain dead. 
 
