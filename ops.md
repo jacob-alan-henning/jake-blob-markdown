@@ -37,7 +37,7 @@ But its all possible - a constant cycle of death and rebirth.
 
 How little can you get away with? I don't know the question is why would you want to get away with it. Isn't this fun
 
-![pretty picture of a river](images/rock.jpg)
+![sysiphus](images/sisyphus.jpg)
 
 
 
